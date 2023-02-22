@@ -19,7 +19,7 @@ This project consists of three technical analysis deliverables and a written rep
 * Create the training variables by converting the string values into numerical ones using the get_dummies() method.
 * Create the target variables.
 * Check the balance of the target variables.
-* 
+
 Next, begin resampling the training data. First, use the oversampling RandomOverSampler and SMOTE algorithms to resample the data, then use the undersampling ClusterCentroids algorithm to resample the data. For each resampling algorithm, do the following:
 * Use the LogisticRegression classifier to make predictions and evaluate the model’s performance.
 * Calculate the accuracy score of the model.
@@ -56,8 +56,40 @@ For each machine learning model listed below, there is a bulleted list that desc
 
 <img width="307" alt="SMOTE_oversampling" src="https://user-images.githubusercontent.com/114960958/220500148-06740c3e-d767-4f1b-992b-abd33b2da299.png">
 
+#### Cluster Centroids
+* Balance Accuracy Score: 0.5297
+* Model: Logistic Regression
 
-## Summary:
+<img width="305" alt="Cluster_Centroids" src="https://user-images.githubusercontent.com/114960958/220500481-77d78557-6da6-4415-9ae8-04c81f2f32be.png">
 
-There is a summary of the results (2 pt)
-There is a recommendation on which model to use, or there is no recommendation with a justification (3 pt)
+#### SMOTEENN
+* Balance Accuracy Score: 0.6548
+* Model: Logistic Regression
+
+<img width="307" alt="SMOTEENN" src="https://user-images.githubusercontent.com/114960958/220500581-a266f5de-effd-4199-b44e-ffdefae82dc8.png">
+
+#### Balanced Random Forest Classifier
+* Balance Accuracy Score: 0.8731
+* Model: Accuracy Score
+
+<img width="305" alt="balanced_random_forest_classifier" src="https://user-images.githubusercontent.com/114960958/220500737-daeefeb4-f6a7-4d94-8bbe-9eb1a3e123b7.png">
+
+#### Easy Ensemble AdaBoost Classifier
+* Balance Accuracy Score: 0.9424
+* Model: Accuracy Score
+
+<img width="303" alt="easy_ensemble_adaboost_classifier" src="https://user-images.githubusercontent.com/114960958/220500881-606e0cf1-6bfa-4df8-b7bf-65f5c98dc397.png">
+
+## Summary
+
+Summary of Results: 
+
+<img width="788" alt="summary_table" src="https://user-images.githubusercontent.com/114960958/220500941-d62a8497-f47a-4a7b-8ead-f520b924a9a4.png">
+
+### Recommendations
+
+The Random Over Sampler (Naive Random Oversampling), SMOTE Oversampling, Cluster Centroids, and Cluster Centroids resulted in a low F1 score, all below 0.02. We can conclude that considering a helpful method for pondering the F1 score, a pronounced imbalance between sensitivity and accuracy will yield a low F1 score.
+
+Balanced Random Forest Classifier and Easy Ensemble AdaBoost Classifier has high results of precision (pre), recall (rec), specificity (spe), F1-score (f1), geo (Geometric Mean), Index Balanced Accuracy (iba) and support (sup) when we compared with others models.
+
+We observe that the Easy Ensemble AdaBoost Classifier showed high results regarding the metrics for measuring the performance of imbalanced classes. Also, this model has the highest balance accuracy score with 0.9424. This means that it has the highest precision of data analysis or includes the correct forecast in Python Scikit learn, so we recommend this model.
